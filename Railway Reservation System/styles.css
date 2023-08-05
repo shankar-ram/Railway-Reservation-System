@@ -1,0 +1,123 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+.main{
+        
+        width:1050px;
+        height: 600px;
+        padding-top: 12px;
+        padding-left: 40px;
+        padding-right: 65px;
+        margin:20px;
+        background-color:cornsilk;  
+    }  
+    
+    .bg-modal{
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .modal-content{
+        width: 500px;
+        height: 300px;
+        background-color: white;
+        border-radius: 4px;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
+    input{
+        width: 50%;
+        display:block;
+        margin: 15px auto;
+    }
+    .close{
+        position: absolute;
+        top:0;
+        right: 14px;
+        font-size: 42px;
+        transform: rotate(45deg);
+        cursor: pointer;
+        
+    }
+    .button {
+	background-color: blue;
+	border: 2px solid white;
+	border-radius: 30px;
+	text-decoration: none;
+	padding: 10px 28px;
+	color: white;
+	margin-top: 10px;
+	display: inline-block;
+	&:hover {
+		background-color: black;
+		color: $blue;
+		border: 2px solid blue;
+	}
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
